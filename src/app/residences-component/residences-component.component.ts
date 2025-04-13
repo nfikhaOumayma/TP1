@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Residence } from 'src/core/models/residence';
+import { ResidenceService } from '../Services/residence.service';
 
 @Component({
   selector: 'app-residences-component',
@@ -8,7 +9,7 @@ import { Residence } from 'src/core/models/residence';
 })
 export class ResidencesComponentComponent implements OnInit {
 
-  constructor() { }
+  constructor( private residenceservice:ResidenceService) { }
   favoriteResidences: Residence[] = [];
 
   listResidences:Residence[]=[
@@ -32,10 +33,7 @@ export class ResidencesComponentComponent implements OnInit {
 
   searchName="";
 
-  // searchByName(){
-  //   return this.listResidences.filter(r=>r.name.toLowerCase().includes(this.searchName.toLowerCase()))
-  // }
-
+ 
   addToFavorites(residence: Residence) {
     if (!this.favoriteResidences.includes(residence)) {
       this.favoriteResidences.push(residence);
@@ -54,7 +52,10 @@ export class ResidencesComponentComponent implements OnInit {
       res.address.toLowerCase().includes(this.searchAddress.toLowerCase())
     );
   }
+
+  n!:number
+  getCount(){
+    return this.n=this.residenceservice.getNumber(this.listResidences,"name","El Fel");
+  }
   
-
-
 }

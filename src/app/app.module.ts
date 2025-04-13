@@ -9,8 +9,6 @@ import { HomeComponent } from './home/home.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ResidencesComponentComponent } from './residences-component/residences-component.component';
 import { NotfoundComponent } from './notfound/notfound.component';
-import { AnnonceComponent } from './annonce/annonce.component';
-import { ListAnnonceComponent } from './annonce/list-annonce/list-annonce.component';
 import { AnnonceModule } from './annonce/annonce.module';
 import { AddResidenceComponent } from './add-residence/add-residence.component';
 
