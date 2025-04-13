@@ -7,7 +7,9 @@
         <input type="text" [(ngModel)]="searchAddress" class="form-control" placeholder="Rechercher par adresse" />
       </div>
     </div>
-  
+    <button class="btn btn-outline-danger btn-sm  " (click)="getCount()">
+      count
+    </button>
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
       <div class="col" *ngFor="let r of filteredResidences()">
         <div class="card h-100 shadow-sm border-light">
@@ -31,12 +33,15 @@
             <button class="btn btn-info btn-sm" style="margin-right:10px;" (click)="showLocation(r)">
               View Location
             </button>
-            <button class="btn btn-outline-danger btn-sm  " (click)="addToFavorites(r)">
-              ❤️ Like
+            <button class="btn" (click)="addToFavorites(r)">
+              ❤️Like
             </button>
-            <button class="btn btn-outline-danger btn-sm  " (click)="getCount()">
-              count
-            </button>          </div>
+            <button class="btn btn-outline-danger btn-sm  " (click)="deleteRResidence(r.id)">
+              <i class="fa-solid fa-trash"></i>
+              Delete
+            </button>
+          
+          </div>
           
         </div>
       </div>

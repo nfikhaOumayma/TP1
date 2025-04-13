@@ -11,7 +11,7 @@ export class ResidencesComponentComponent implements OnInit {
 
   constructor( private residenceservice:ResidenceService) { }
   favoriteResidences: Residence[] = [];
-
+  listServiceResidences:Residence[]=[];
   listResidences:Residence[]=[
     {id:1,"name": "El fel","address":"Borj Cedria", "image":"../../assets/images/R1.jpg", status: "Disponible"},
      {id:2,"name": "El yasmine", "address":"Ezzahra","image":"../../assets/images/R2.jpg", status: "Disponible" },
@@ -21,6 +21,10 @@ export class ResidencesComponentComponent implements OnInit {
    ];
  
   ngOnInit(): void {
+    this.residenceservice.getAllResidences().subscribe((res)=>{
+      this.listServiceResidences=res;
+      console.log(this.listServiceResidences);
+    })
   }
 
   showLocation(res:Residence){
@@ -47,7 +51,7 @@ export class ResidencesComponentComponent implements OnInit {
   searchAddress: string = '';
   
    filteredResidences(): Residence[] {
-    return this.listResidences.filter(res =>
+    return this.listServiceResidences.filter(res =>
       res.name.toLowerCase().includes(this.searchName.toLowerCase()) &&
       res.address.toLowerCase().includes(this.searchAddress.toLowerCase())
     );
@@ -55,7 +59,19 @@ export class ResidencesComponentComponent implements OnInit {
 
   n!:number
   getCount(){
-    return this.n=this.residenceservice.getNumber(this.listResidences,"name","El Fel");
+    return this.n=this.residenceservice.getNumber(this.listServiceResidences,"id",1);
+    console.log(this.n);
   }
+
+  deleteRResidence(id:number){
+    this.residenceservice.deleteResidence(id).subscribe((res)=>{
+    console.log(res);
+    this.ngOnInit();
+    })
+  }
+
+
+
+
   
 }

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
+import { ResidenceService } from '../Services/residence.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-residence',
@@ -9,7 +11,7 @@ import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms
 export class AddResidenceComponent implements OnInit {
 
   formadd!:UntypedFormGroup
-
+  constructor(private serviceResidence:ResidenceService, private router:Router) { }
   ngOnInit(): void {
     this.formadd = new UntypedFormGroup({
       id: new UntypedFormControl('', [Validators.required, Validators.pattern(/^[1-9][0-9]*$/)]),
@@ -28,7 +30,12 @@ export class AddResidenceComponent implements OnInit {
   get id(){return this.formadd.get('id')}
 
   addresidence(){
-    console.log('notre residence : '+JSON.stringify(this.formadd.value))
+  this.serviceResidence.addResidence(this.formadd.value).subscribe((res)=>{
+    console.log(res);
+    alert("residence added")
+    this.formadd.reset();
+  this.router.navigate(['/residences']);
+  }) 
   }
 
 }
