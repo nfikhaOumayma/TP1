@@ -31,14 +31,23 @@ export class ResidenceService {
   addResidence(residence: Residence):Observable<Residence>{
     return this.http.post<Residence>('http://localhost:3000/residence', residence)
   }
+<<<<<<< HEAD
   
   updateResidence(residence: Residence, id:any):Observable<Residence>{
     return this.http.put<Residence>(`http://localhost:3000/residence/${id}`, residence)
   } 
 
+=======
+  updateResidence(residence: Residence):Observable<Residence>{
+    return this.http.put<Residence>(`http://localhost:3000/residence/${residence.id}`, residence)
+  } 
+>>>>>>> origin/master
   deleteResidence(id: number): Observable<void> {
     return this.http.delete<void>(`http://localhost:3000/residence/${id}`);
   }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
 }

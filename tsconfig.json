@@ -28,5 +28,8 @@
     "strictInputAccessModifiers": true,
     "strictTemplates": true
   }
+<<<<<<< HEAD
   
+=======
+>>>>>>> origin/master
 }

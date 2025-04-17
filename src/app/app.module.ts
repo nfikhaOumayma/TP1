@@ -12,7 +12,10 @@ import { NotfoundComponent } from './notfound/notfound.component';
 import { AnnonceModule } from './annonce/annonce.module';
 import { AddResidenceComponent } from './add-residence/add-residence.component';
 import {HttpClientModule} from '@angular/common/http';
+<<<<<<< HEAD
 import { UpdateResidenceComponent } from './update-residence/update-residence.component';
+=======
+>>>>>>> origin/master
 
 @NgModule({
   declarations: [
@@ -23,7 +26,10 @@ import { UpdateResidenceComponent } from './update-residence/update-residence.co
     ResidencesComponentComponent,
     NotfoundComponent,
     AddResidenceComponent,
+<<<<<<< HEAD
     UpdateResidenceComponent,
+=======
+>>>>>>> origin/master
   ],
   imports: [
     BrowserModule,

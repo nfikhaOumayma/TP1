@@ -20,9 +20,15 @@
             <p>
               <span class="badge fs-6"
                     [ngClass]="{
+<<<<<<< HEAD
                       'bg-success': r.status === 'disponible',
                       'bg-danger': r.status === 'Vendu',
                       'bg-secondary': r.status !== 'disponible' && r.status !== 'Vendu'
+=======
+                      'bg-success': r.status === 'Disponible',
+                      'bg-danger': r.status === 'Vendu',
+                      'bg-secondary': r.status !== 'Disponible' && r.status !== 'Vendu'
+>>>>>>> origin/master
                     }">
                 {{ r.status }}
               </span>
@@ -40,10 +46,14 @@
               <i class="fa-solid fa-trash"></i>
               Delete
             </button>
+<<<<<<< HEAD
             <button class="btn btn-outline btn-sm  " [routerLink]="['/update', r.id]">
               <i class="fa-solid fa-pencil"></i>
               update
             </button>
+=======
+          
+>>>>>>> origin/master
           </div>
           
         </div>

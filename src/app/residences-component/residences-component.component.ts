@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Residence } from 'src/core/models/residence';
 import { ResidenceService } from '../Services/residence.service';
+<<<<<<< HEAD
 import { Router } from '@angular/router';
+=======
+>>>>>>> origin/master
 
 @Component({
   selector: 'app-residences-component',
@@ -10,7 +13,11 @@ import { Router } from '@angular/router';
 })
 export class ResidencesComponentComponent implements OnInit {
 
+<<<<<<< HEAD
   constructor( private residenceservice:ResidenceService , private router:Router) { }
+=======
+  constructor( private residenceservice:ResidenceService) { }
+>>>>>>> origin/master
   favoriteResidences: Residence[] = [];
   listServiceResidences:Residence[]=[];
   listResidences:Residence[]=[
@@ -49,7 +56,11 @@ export class ResidencesComponentComponent implements OnInit {
   console.log(this.favoriteResidences.length);
 }
 
+<<<<<<< HEAD
   searchAddress: string = ''; 
+=======
+  searchAddress: string = '';
+>>>>>>> origin/master
   
    filteredResidences(): Residence[] {
     return this.listServiceResidences.filter(res =>
@@ -71,9 +82,13 @@ export class ResidencesComponentComponent implements OnInit {
     })
   }
 
+<<<<<<< HEAD
   goToUpdateResidence(id:number){
     this.router.navigate(['/update',id])
   }
+=======
+
+>>>>>>> origin/master
 
 
   

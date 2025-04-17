@@ -9,7 +9,10 @@ const r:Routes=[
   {path:"home",component:HomeComponent},
   {path:"residence", component:ResidencesComponentComponent},
   {path:"addResidence", component:AddResidenceComponent},
+<<<<<<< HEAD
   {path:"update/:id", component:AddResidenceComponent}
+=======
+>>>>>>> origin/master
 
 ]
 
