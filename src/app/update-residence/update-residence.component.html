@@ -1,0 +1,53 @@
+<div class="container">
+    <form [formGroup]="updateForm" (ngSubmit)="onSubmit()">
+    
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Id</span>
+            </div>
+            <input type="text" class="form-control" formControlName="id">
+        </div>
+        <div class="alert alert-danger" *ngIf="updateForm.get('id')?.invalid && updateForm.get('id')?.touched">
+            Votre ID est invalide.
+        </div>
+        
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Name</span>
+            </div>
+            <input type="text" class="form-control" formControlName="name">
+        </div>
+        <div class="alert alert-danger" *ngIf="updateForm.get('name')?.invalid && updateForm.get('name')?.touched">
+            Max length est 10 caractères.
+        </div>
+        
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Address</span>
+            </div>
+            <input type="text" class="form-control" formControlName="address">
+        </div>
+        <div class="alert alert-danger" *ngIf="updateForm.get('address')?.errors?.['minlength'] && updateForm.get('address')?.touched">
+            L'adresse doit avoir au moins 5 caractères et commencer par une majuscule.
+        </div>
+        
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Image</span>
+            </div>
+            <input type="text" class="form-control" formControlName="image">
+        </div>
+        
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Status</span>
+            </div>
+            <input type="text" class="form-control" formControlName="status">
+        </div>
+        <div class="alert alert-danger" *ngIf="updateForm.get('status')?.invalid && updateForm.get('status')?.touched">
+            Votre status est incorrect (doit être 'disponible').
+        </div>
+        
+        <button type="submit" class="btn btn-primary" [disabled]="updateForm.invalid">Save</button>
+    </form>
+</div>
